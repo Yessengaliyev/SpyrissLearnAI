@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpyrisLearn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --color-surge-bg: #050505;
+      --color-surge-card: rgba(255, 255, 255, 0.03);
+      --color-surge-ink: #FFFFFF;
+      --color-surge-purple: #A855F7;
+      --color-surge-purple-dark: #7E22CE;
+      --color-surge-border: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      font-family: 'Inter', system_ui, sans-serif;
+      background: var(--color-surge-bg);
+      color: var(--color-surge-ink);
+      min-height: 100vh;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      color: #A855F7;
+    }
+  </style>
+</head>
+<body class="bg-surge-bg text-surge-ink antialiased">
+
+  <div id="root"></div>
+
+  <!-- Встроенный React + весь ваш код -->
+  <script type="module">
+    import React from "https://esm.sh/react@19";
+    import ReactDOM from "https://esm.sh/react-dom@19";
+
+    // Здесь должен быть весь ваш код из App.tsx, но поскольку он очень большой,
+    // для GitHub Pages рекомендуется использовать собранную версию (vite build).
+
+    // Временная заглушка, чтобы страница хотя бы открылась
+    const App = () => {
+      return React.createElement('div', {
+        className: "min-h-screen flex items-center justify-center p-8"
+      },
+        React.createElement('div', {
+          className: "max-w-2xl text-center glass-panel p-12 rounded-[2.5rem]"
+        },
+          React.createElement('h1', {
+            className: "text-6xl font-display font-bold mb-6 text-surge-purple"
+          }, "SpyrisLearn"),
+          React.createElement('p', {
+            className: "text-xl text-surge-ink/70 mb-8"
+          }, "AI Study Assistant"),
+          React.createElement('div', {
+            className: "text-sm text-surge-ink/50"
+          }, 
+            "Полная версия приложения слишком большая для одного index.html. ",
+            React.createElement('br'),
+            "Рекомендуется собрать проект через Vite (npm run build) и загрузить папку dist на GitHub Pages."
+          )
+        )
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      React.createElement(React.StrictMode, null,
+        React.createElement(App)
+      )
+    );
+  </script>
+
+  <div class="fixed bottom-4 right-4 text-xs text-white/30">
+    SpyrisLearn • Single File Demo
+  </div>
+
+</body>
+</html>
